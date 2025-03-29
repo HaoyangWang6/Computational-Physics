@@ -68,7 +68,7 @@ if __name__ == "__main__":
     x0 = 1.0  # 初始位置（振幅）
     v0 = 0.0  # 初始速度（从静止开始振动）
     N1 = 500  # 时间步数1
-    N2 = 1000  # 时间步数2（注意：原代码标签写为N=5000，此处实际为1000）
+    N2 = 1000  # 时间步数2
 
     # 进行两次不同精度的计算
     t1, x1, v1, E1 = runge_kutta(f, x0, v0, N1)
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     # 位置-时间图
     plt.subplot(2, 2, 1)
     plt.plot(t1, x1, label="N=500")
-    plt.plot(t2, x2, label="N=5000")  # 注意：实际N2=1000，标签可能有误
+    plt.plot(t2, x2, label="N=1000")
     plt.title("Position vs Time")
     plt.xlabel("Time")
     plt.ylabel("Position")
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     # 能量-时间图
     plt.subplot(2, 2, 2)
     plt.plot(t1, E1, label="N=500")
-    plt.plot(t2, E2, label="N=5000")  # 注意：实际N2=1000，标签可能有误
+    plt.plot(t2, E2, label="N=1000")
     plt.title("Energy vs Time")
     plt.xlabel("Time")
     plt.ylabel("Energy")
